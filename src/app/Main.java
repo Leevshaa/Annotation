@@ -17,12 +17,15 @@ public class Main {
             Annotation.MethodInfo methodInfoAnnotation = declaredMethod.getAnnotation(Annotation.MethodInfo.class);
 
             if (authorAnnotation != null && methodInfoAnnotation != null) {
+
+                declaredMethod.setAccessible(true);
+
                 System.out.println("\nМетод: " + methodInfoAnnotation.name() +
                         "\nТип даних: " + methodInfoAnnotation.returnType() +
                         "\nОпис: " + methodInfoAnnotation.description() +
                         "\nАвтор: " + authorAnnotation.firstName() + " " + authorAnnotation.lastName());
                 try {
-                    Object result = declaredMethod.invoke(arrayUtils, array);
+                    Object result = declaredMethod.invoke(arrayUtils, (Object) array);
                     System.out.println("Робота методу: " + result);
                 } catch (Exception e) {
                     System.out.println("Помилка при виклику методу " + declaredMethod.getName() + ": " +

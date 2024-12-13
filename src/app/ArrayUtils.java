@@ -5,7 +5,7 @@ public class ArrayUtils {
     @Annotation.MethodInfo(name = "arraySum", returnType = "int",
             description = "The method finds the total sum of the array values")
     @Annotation.Author(firstName = "Vitalii", lastName = "Yurchenko")
-    public int arraySum(int[] array) {
+    private int arraySum(int[] array) {
         int result = 0;
         for (int value : array) {
             result += value;
@@ -13,14 +13,14 @@ public class ArrayUtils {
         return result;
     }
 
-//    public int getArraySum(int[] array) {
-//        return arraySum(array);
-//    }
+    public int getArraySum(int[] array) {
+        return arraySum(array);
+    }
 
     @Annotation.MethodInfo(name = "maxValueArray", returnType = "int",
             description = "The method finds the maximum value in the array")
     @Annotation.Author(firstName = "Vitalii", lastName = "Yurchenko")
-    public int maxValueArray(int[] array) {
+    private int maxValueArray(int[] array) {
         int maxValue = 0;
         for (int value : array) {
             if (value > maxValue) {
@@ -30,7 +30,7 @@ public class ArrayUtils {
         return maxValue;
     }
 
-//    public int getMaxValueArray(int[] array) {
-//        return maxValueArray(array);
-//    }
+    public int getMaxValueArray(int[] array) {
+        return maxValueArray(array);
+    }
 }
